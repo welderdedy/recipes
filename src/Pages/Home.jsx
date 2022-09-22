@@ -1,9 +1,10 @@
 import React from 'react';
+import CardSection from '../Components/Card-section/CardSection';
 
 function Home() {
   return (
     <div>
-        <h1>home</h1>
+        <CardSection />
     </div>
   )
 }
