@@ -7,7 +7,7 @@ import imagePeanut from '../../assets/foodiesfeed.com_peanut-butter-and-banana-s
 
 function CardSection() {
   return (
-    <Container>
+    <Container id='Recipes'>
         <h2>Lastest Recipes</h2>
         <div className='dash'></div>
         <div className='cards'>

@@ -7,6 +7,10 @@ const GlobalStyle = createGlobalStyle`
         box-sizing: border-box;
         color: #373737;
     }
+
+    html{
+        scroll-behavior: smooth;
+    }
 `;
 
 export default GlobalStyle;
