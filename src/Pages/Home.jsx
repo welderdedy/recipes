@@ -8,7 +8,7 @@ function Home() {
     <div>
         <CardSection />
         <Subscribe />
-        <Footer />
+        <Footer  />
     </div>
   )
 }
