@@ -1,61 +1,98 @@
 import React from "react";
 import styled from "styled-components";
 import Imagem from "../../assets/RC.svg";
-import Imagem2 from "../../assets/header.png";
+
+export const Container = styled.div`
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-inline: 2%;
+    height: 80px;
+    width: 100vw;
+    position: absolute;
+    top: 0;
+    right: 0;
+    background-color: transparent;
+
+    i{
+        color: #373737;
+        font-size: 30px;
+        display: none;
+    }
+
+
+    @media(max-width: 768px){
+        i{
+            display: block;
+        }
+    }
+`;
+
 export const Dedy = styled.ul`
+    display:flex;
+    list-style:none;
+    gap: 20px;
+    align-items: center;
 
-display:flex;
-justify-content:flex-end;
-position:relative;
-bottom:800px;
-left:40px;
-color:#373737;
-list-style:none;
-`
-export const Colunas = styled.li`
+    li{
+        cursor: pointer;
+    }
 
-padding:50px 50px 30px 50px;
+    li:last-child{
+        border: 3px solid #373737;
+        padding: 7px 15px;
+        transition: all ease-in 0.3s;
+
+        :hover{
+                background-color: #373737;
+                color: white;
+        }
+    }
+
+    @media(max-width: 768px){
+        display: none;
+    }
 `
 export const Img1 = styled.img`
-
-display:flex;
-width:4vw;
-position:relative;
-bottom:880px;
-left:40px;
-
-`
-export const Img2 = styled.img`
-
-
-width:120vw;
-height:120vh;
-position:relative;
-bottom:65px;
-right:40px;
-
-`
+width: 50px;
+`;
 
 export default function Header(){
+
+//     const [scrollPosition, setScrollPosition] = useState(0);
+        
+    
+//     const handleScroll = () => {
+//         const position = window.scrollY;
+//         setScrollPosition(position);
+//     };
+
+//   useEffect(() => {
+//     window.addEventListener("scroll", handleScroll);
+
+//     return () => {
+//       window.removeEventListener("scroll", handleScroll);
+//     };
+//   }, []);
+
+
     return (
        
-        <div>
+        <Container>
             <figure>
-            <Img2 src={Imagem2} alt="img2" />
+                <Img1 src={Imagem} alt="logo" />
             </figure>
             
             <nav>
-            <Dedy>
-                <Colunas>ABOUT</Colunas>
-                <Colunas>RECIPES</Colunas>
-                <Colunas>SUBSCRIBE</Colunas>
-            </Dedy>
-          </nav>
-          <figure>
-            <Img1 src={Imagem} alt="img1" />
-            </figure>
-          
-        </div>
+                <Dedy>
+                    <li>ABOUT</li>
+                    <li>RECIPES</li>
+                    <li>SUBSCRIBE</li>
+                </Dedy>
+            </nav>
+
+            <i class="fa-solid fa-bars"></i>
+        </Container>
        
     )
 }
