@@ -2,41 +2,72 @@ import React from "react";
 import styled from "styled-components";
 import Imagem3 from "../../assets/pexels-karolina-grabowska-4199094.png";
 
-export const Img3 = styled.img`
 
+export const Container = styled.div`
+   width: 100%;
+   display: flex;
+   align-items: center;
 
-width:50vw;
-`
-export const H2 = styled.h2`
+   figure{
+      width: 50%;
 
-position:relative;
-left:1000px;
-bottom:520px;
+      img{
+         width: 100%;
+      }
+   }
 
-`
-export const P = styled.p`
+   div.content{
+      width:50%;
+      display: flex;
+      flex-direction: column;
+      text-align: center;
+      padding-inline: 7%;
+      align-items: center;
 
-position:relative;
-left:850px;
-bottom:500px;
-width:700vw;
+      h2{
+         margin-bottom: 10px;
+         font-size: 40px;
+         text-transform: uppercase;
+      }
 
+      .little-dash{
+         width: 52px;
+         height: 3px;
+         background-color: #373737;
+         margin-bottom: 31px;
+      }
 
-`
+      p{
+         text-align: justify;
+         font-size: 20px;
+      }
+   }
+
+   @media(max-width: 900px){
+      flex-direction: column;
+
+      figure{
+         width: 100%;
+      }
+
+      div.content{
+         width: 100%;
+         padding-block: 70px;
+      }
+   }
+`;
+
 export default function About(){
  return(
-    <div>
-    <Img3 src={Imagem3} alt="img" />
-    <H2>ABOUT</H2>
-    <P>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi </P> 
-    <P> tincidunt, tortor nec rhoncus dictum, lorem massa tempus sem,</P>
-    <P> eu tincidunt libero velit sit amet velit. Nunc in euismod </P>
-    <P> Duis dapibus, elit eu eleifend tincidunt,nulla ipsum consectetur </P>
-    <P> lorem, quis tempor lorem justo quis nisi. Nam interdum, nisi nec</P>
-    <P> mollis sagittis, enim risus euismod nisi, quis rutrum quam augue</P>
-    <P> id mauris.Pellentesque mattis hendrerit semper. Orci varius</P>
-    <P> natoque penatibus et magnis dis parturient montes, nascetur</P>
-    <P> ridiculus mus. Ut vestibulum nisl ante, et ultricies sapien facilisis aliquam.</P>
-    </div>
+    <Container>
+      <figure>
+         <img src={Imagem3} alt="img" />
+      </figure>
+      <div className="content">
+         <h2>About</h2>
+         <div className="little-dash"></div>
+         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi tincidunt, tortor nec rhoncus dictum, lorem massa tempus sem, eu tincidunt libero velit sit amet velit. Nunc in euismod urna. Duis dapibus, elit eu eleifend tincidunt, nulla ipsum consectetur lorem, quis tempor lorem justo quis nisi. Nam interdum, nisi nec mollis sagittis, enim risus euismod nisi, quis rutrum quam augue id mauris. Pellentesque mattis hendrerit semper. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Ut vestibulum nisl ante, et ultricies sapien facilisis aliquam.</p>
+      </div>
+    </Container>
  )
 }
